@@ -1,7 +1,7 @@
 <?php
     class Database {
         private $host = "localhost";
-        private $db_name = "php_rest_api";
+        private $db_name = "drugstore";
         private $username = "root";
         private $password = "dhanujatoor";
 

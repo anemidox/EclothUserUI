@@ -1,0 +1,39 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container styling */
+  .container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Button styling */
+  .dynamic-button {
+    background: lightblue;
+    padding: 40px 80px; /* Increased padding for larger button */
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 10px;
+  }
+  
+  .dynamic-button img {
+    width: 100px; /* Adjust the size of the image as needed */
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .dynamic-button:hover {
+    background: red;
+  }
+  

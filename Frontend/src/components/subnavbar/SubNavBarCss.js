@@ -3,6 +3,7 @@ export default function SubNavBarCss() {
             <style>
                 .SubNavBar {
                     color: green;
+                    background-color: #b4b4b4;
                 }
             </style>
         `

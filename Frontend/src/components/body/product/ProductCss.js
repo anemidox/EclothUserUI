@@ -15,7 +15,7 @@ export default function ProductCss() {
         .flex-box {
           width: 300px;
           height: 400px;
-          background: linear-gradient(purple, pink);
+          background: #fff;
           font-size: 25px;
           text-align: center;
           line-height: 200px;
@@ -36,7 +36,7 @@ export default function ProductCss() {
         .flex-box img {
           width: 100%;
           height: 100%;
-          object-fit: cover; 
+          object-fit: scale-down; 
         }
       </style>
     `;

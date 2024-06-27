@@ -8,7 +8,7 @@ export default function Product() {
     })
     .then(data => {
       data.forEach(user => {
-        const markup = `<><img src="${user.image}" width="200px" height="200px"></>`;
+        const markup = `<img src="${user.image}" width="200px" height="200px">`;
 
         document.querySelector('div').insertAdjacentHTML('beforeend', markup);
       })

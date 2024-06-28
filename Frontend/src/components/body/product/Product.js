@@ -42,6 +42,8 @@ export default function Product() {
         <div class="flex-box"></div>
         <div class="flex-box"></div>
         <div class="flex-box"></div>
+        <div class="flex-box"></div>
+        <div class="flex-box"></div>
       </div>
     </section>
   `;

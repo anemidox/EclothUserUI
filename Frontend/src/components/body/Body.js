@@ -1,4 +1,4 @@
-import Product from './product/Product.js';
+import Product from "./loading_page/loadingPage.js";
 
 export default function Body() {
     return `

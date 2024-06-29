@@ -1,11 +1,9 @@
 export default function oneOneRowCss() {
     return (`
         <style>
-        .one-one-row-container {
+        .shopping-cart-container {
             display: flex;
-            box-sizing: border-box; 
-        }
-        .one-one-row {
+            flex-direction: column;
             box-sizing: border-box;
             background-color: yellow;
             width: 50vh;

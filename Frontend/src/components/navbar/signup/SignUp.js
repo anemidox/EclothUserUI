@@ -1,7 +1,7 @@
 export default function SignUp() {
     return `
       <div class="signup">
-        <h1>Sign Up</h1>
+        <h1>Sing In</h1>
       </div>
     `;
 }

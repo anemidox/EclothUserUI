@@ -2,7 +2,7 @@ export default function LogoCss() {
     return(`
             <style>
                 .logo {
-                    background: green;
+                    background:#232f3e;
                 }
             </style>
         `)

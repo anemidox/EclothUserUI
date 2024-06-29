@@ -12,6 +12,6 @@ export default function oneTreeRowCss() {
             height: 75vh;
             margin: 1%;
         }
-        </style>
+        </style>s
     `);
 }

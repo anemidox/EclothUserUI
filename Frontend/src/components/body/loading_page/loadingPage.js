@@ -8,7 +8,7 @@ export default function loadingPage() {
             <div class="loading-page">
 
                 ${Carousel()}
-                ${mainCatogory()}
+                ${mainCatogory()} 
                 
                 
             </div>

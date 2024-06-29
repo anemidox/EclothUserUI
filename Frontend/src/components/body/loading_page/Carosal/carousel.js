@@ -12,6 +12,6 @@ export default function Carousel() {
             </div>
             <button class="carousel-button prev">‹</button>
             <button class="carousel-button next">›</button>
-        </div>
+        </div> 
     `);
 }

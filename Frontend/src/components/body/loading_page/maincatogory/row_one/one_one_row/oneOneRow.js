@@ -7,7 +7,7 @@ export default function oneOneRow() {
             <div class="one-one-row">
                 Edit Me
             </div>
-        </div>
+        </div> 
     `);
 }
     

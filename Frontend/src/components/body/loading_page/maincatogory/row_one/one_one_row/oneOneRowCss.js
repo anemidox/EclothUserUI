@@ -7,7 +7,7 @@ export default function oneOneRowCss() {
         }
         .one-one-row {
             box-sizing: border-box;
-            background-color: red;
+            background-color: yellow;
             width: 50vh;
             height: 75vh;
             margin: 1%;

@@ -10,7 +10,7 @@ export default function oneOneRowCss() {
             background-color: yellow;
             width: 50vh;
             height: 75vh;
-            margin: 1%; 
+            margin: 1%;
         }
         </style>
     `);

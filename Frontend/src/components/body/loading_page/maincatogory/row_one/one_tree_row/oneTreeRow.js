@@ -8,5 +8,5 @@ export default function oneTreeRow() {
                     Edit Me
                 </div>
             </div>
-        `) 
+        `)
 }

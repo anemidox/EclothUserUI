@@ -15,7 +15,7 @@ export default function CarouselCss() {
                 transition: transform 0.5s ease-in-out;
             }
 
-            .carousel-item { 
+            .carousel-item {
                 min-width: 100%;
                 padding: 20px;
                 box-sizing: border-box;

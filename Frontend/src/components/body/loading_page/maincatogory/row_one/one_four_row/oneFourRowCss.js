@@ -1,20 +1,3 @@
-// export default function oneFourRowCss() {
-//     return (`
-//         <style>
-//         .one-four-row-container {
-//             display: flex;
-//             box-sizing: border-box; 
-//         }
-//         .one-four-row {
-//             box-sizing: border-box;
-//             background-color: #f0f0f0;
-//             width: 50vh;
-//             height: 75vh;
-//             margin: 1%;
-//         }
-//         </style>
-//     `);
-// }
 
 export default function oneFourRowCss() {
     return (`

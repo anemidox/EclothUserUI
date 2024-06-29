@@ -7,7 +7,7 @@ export default function oneTwoRowCss() {
         }
         .one-two-row {
             box-sizing: border-box;
-            background-color: #f0f0f0;
+            background-color: red;
             width: 50vh;
             height: 75vh;
             margin: 1%;

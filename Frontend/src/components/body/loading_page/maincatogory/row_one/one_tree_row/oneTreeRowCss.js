@@ -86,6 +86,6 @@ export default function oneTreeRowCss() {
         .remove-button {
             background-color: #ff4d4d;
         }
-        </style>
+        </style>s
     `);
 }

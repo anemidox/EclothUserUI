@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.brand-name {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    text-decoration-color: #ffa41c;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+.brand-name:hover {
+    color: #ffa41c;
+    text-decoration-color: #333;
+}

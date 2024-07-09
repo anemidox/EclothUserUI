@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-header {
+    background-color: #fff;
+    color: white;
+    display: flex;
+    box-sizing: border-box;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

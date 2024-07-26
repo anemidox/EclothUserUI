@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.search {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #333;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 1rem;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #333;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 1rem;
+    background-color: #ff9f0f;
+    color: #fff;
+    cursor: pointer;
+}

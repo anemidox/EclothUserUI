@@ -2,13 +2,14 @@ export class Return extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this.render();
-    }
-
-    render() {
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="./src/components/common/Header/Return.css">
-            <div id="return">Return</div>
+            <style>
+                .return {
+                    font-size: 1rem;
+                    color: #333;
+                }
+            </style>
+            <button class="return">Return</button>
         `;
     }
 }

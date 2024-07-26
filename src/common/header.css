@@ -1,0 +1,91 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables for Reusability */
+:root {
+    --bg-color: #f8f9fa;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+/* Main List */
+.main-list {
+    display: flex;
+    list-style: none;
+}
+
+/* Responsive Media Query */
+@media (max-width: 480px) {
+    .main-list li {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-list .item-one {
+        display: block;
+    }
+
+    .main-list .item-two {
+        display: block;
+    }
+
+    .main-list .item-tree {
+        display: block;
+    }
+
+    .main-list .item-five {
+        display: block;
+    }
+
+    .main-list .item-six {
+        display: block;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main-list li {
+        display: flex;
+    }
+
+    .item-one {
+        display: block;
+        background-color: red;
+    }
+
+    .item-two {
+        display: block;
+        background-color: blue;
+    }
+
+    .item-tree {
+        display: block;
+        background-color: greenyellow;
+    }
+
+    .item-four {
+        display: none;
+        background-color: green;
+    }
+
+    .item-five {
+        display: block;
+        background-color: yellow;
+    }
+
+    .item-six {
+        display: block;
+        background-color: pink;
+    }
+
+}

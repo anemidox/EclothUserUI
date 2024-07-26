@@ -1,4 +1,7 @@
-import { App } from './App.js';
+import app from './app.js';
 
 const root = document.getElementById('root');
-const app = new App(root);
+
+if (root) {
+    root.innerHTML = app();
+}

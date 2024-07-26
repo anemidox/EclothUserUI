@@ -1,15 +1,13 @@
 import Home from '../src/pages/home.js';
-import About from '../src/pages/about.js';
-import Contact from '../src/pages/contact.js';
-import ReturnItem from '../src/pages/returns.js';
+import ReturnItem from '../src/pages/return.js';
 import Signin from '../src/pages/signin.js';
+import Cart from '../src/pages/cart.js';
 
 const routes = {
   '/': Home,
-  '/about': About,
-  '/contact': Contact,
   '/returnitem': ReturnItem,
   '/signin': Signin,
+  '/cart': Cart
 };
 
 function router() {
@@ -31,5 +29,3 @@ window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
 
 export { router, navigateTo };
-
-// comment

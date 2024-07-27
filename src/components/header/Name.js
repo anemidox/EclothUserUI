@@ -2,8 +2,13 @@ export class Name extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+
+        const imgName = `<img src="public/icon/name.png" alt="Name" />`
+
         this.shadowRoot.innerHTML = `
-            <h1>App Name</h1>
+        <link rel="stylesheet" href="src/components/header/Name.css">
+            
+            <div class="name">${imgName}</div>
         `;
     }
 }

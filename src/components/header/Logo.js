@@ -2,15 +2,13 @@ export class Logo extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+
+        const logoImage = `<img src="public/icon/logo.png" alt="Logo" />`;
+
         this.shadowRoot.innerHTML = `
-            <style>
-                .logo {
-                    font-size: 2rem;
-                    font-weight: bold;
-                    color: #333;
-                }
-            </style>
-            <div class="logo">Logo</div>
+            <link rel="stylesheet" href="src/components/header/Logo.css">
+
+            <div class="logo">${logoImage}</div>
         `;
     }
 }

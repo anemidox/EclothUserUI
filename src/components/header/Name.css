@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.name {
+    display: flex;
+    padding-right: 10px;
+}
+
+.name img {
+    width: 180px;
+    height: 60px; 
+}
+
+@media (max-width: 480px) {
+    .name img {
+        width: 120px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .name img {
+        width: 100px;
+        height: 40px;
+    }
+}

@@ -1,11 +1,14 @@
 import { Carousel } from "../components/home/Carousel.js";
-import { HomeRow } from "../components/home/HomeRow.js";
+import { HomeBox } from "../components/home/HomeBox.js";
 
 const home = () => {
     return (`
+    <link rel="stylesheet" type="text/css" href="./src/pages/home.css">
         <div class="home">
             <app-carousel></app-carousel>
-            <app-home-row></app-home-row>
+            <div class="home-display-box">
+                <app-home-box></app-home-box>
+            </div>
         </div>
     `);
 }

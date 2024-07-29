@@ -1,5 +1,6 @@
 import { HomeOneBox } from './HomeOneBox.js';
 import { fetchProducts } from '../../api/product.js';
+import { navigateTo } from '../../../router/router.js';
 
 export class HomeBox extends HTMLElement {
     constructor() {
@@ -7,7 +8,7 @@ export class HomeBox extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" type="text/css" href="./src/components/home/HomeBox.css">
-            <div class="home-box"></div>
+            <div class="home-box" onclick="navigateTo('/productlist')"></div>
         `;
     }
 

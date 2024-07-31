@@ -1,6 +1,5 @@
 import header from "./src/common/header.js";
 import { router } from "./router/router.js";
-import footer from "./src/common/footer.js";
 
 const app = () => {
     return `

@@ -1,17 +1,77 @@
+/* Container for each product box */
 .home-one-box {
-  box-sizing: border-box;
-  width: 6em;
-  height: 6em;
-  background-color: #6cc04b;
-  margin: 3px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Box styling for the image and product details */
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Styling for the product image */
+#product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Add a subtle zoom effect on hover */
+.home-one-box:hover #product-image {
+  transform: scale(1.1);
+}
+
+/* Container for product details */
+.details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-.home-one-box img {
-  max-width: 100%;
-  height: auto;
+
+/* Product ID styling */
+#product-id {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Product image and detail section */
+.home-one-box .box p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Hover effects for the product card */
+.home-one-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .home-one-box {
+      flex-direction: column;
+  }
+
+  #product-id {
+      font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-one-box {
+      max-width: 100%;
+  }
 }

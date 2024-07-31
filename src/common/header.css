@@ -1,46 +1,96 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Header container styling */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232f3e;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation styling */
+.main-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* List styling */
+.main-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* List items styling */
+.list-item {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.list-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.list-item a:hover {
+    color: #f0c14b;
+}
+
+/* Logo and Name styling */
+.item-one, .item-two {
+    display: flex;
+    align-items: center;
+}
+
+/* Search bar styling */
+.item-tree {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Adjust search input */
+app-search {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Icon styling */
+.list-item app-logo,
+.list-item app-return,
+.list-item app-login,
+.list-item app-cart {
+    height: 24px;
+    width: 24px;
+}
+
+.list-item app-logo {
+    margin-right: 10px;
+}
+
+.item-four, .item-five, .item-six {
+    display: flex;
+    align-items: center;
+}
+
+
 @media (max-width: 768px) {
-    * {
-        font-size: 14px;
-    }
-
     .main-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-        "logo name return signin cart"
-        "search search search search search";
-        ;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .main-list .item-one {
-        grid-area: logo;
+    .list-item {
+        margin: 10px 0;
     }
 
-    .main-list .item-two {
-        grid-area: name;
+    .item-tree {
+        justify-content: flex-start;
     }
-
-    .main-list .item-four {
-        grid-area: return;
-    }
-
-    .main-list .item-five {
-        grid-area: signin;
-    }
-
-    .main-list .item-six {
-        grid-area: cart;
-    }
-
-    .main-list .item-tree {
-        grid-area: search;
-    }
-
 }

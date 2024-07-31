@@ -1,8 +1,8 @@
-import { Box } from '../components/footer/Box.js';
+import { BoxFooter } from "../components/footer/BoxFooter.js";
 
 const footer = () => {
     return (`
-        <app-box></app-box>
+        <box-footer></box-footer>
     `);
 }
 

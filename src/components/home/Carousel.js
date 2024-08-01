@@ -4,9 +4,9 @@ export class Carousel extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.currentIndex = 0;
         this.slides = [
-            'https://via.placeholder.com/1200x800.png?text=Slide+1',
-            'https://via.placeholder.com/1200x800.png?text=Slide+2',
-            'https://via.placeholder.com/1200x800.png?text=Slide+3'
+            'https://m.media-amazon.com/images/I/61CiqVTRBEL._SX3000_.jpg',
+            'https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg',
+            'https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg',
         ];
         
 

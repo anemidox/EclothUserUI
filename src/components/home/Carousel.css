@@ -1,28 +1,20 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Carousel Styles */
 .carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    background-color: #f0f0f0;
+    height: 1200px; /* Adjust height as needed */
 }
 
 .carousel__slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .carousel__slide {
     min-width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel__slide img {
@@ -38,10 +30,11 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
-    padding: 10px;
+    font-size: 2rem;
+    padding: 0.5rem;
     cursor: pointer;
     z-index: 1;
-    font-size: 18px;
+    outline: none;
     transition: background-color 0.3s;
 }
 
@@ -57,16 +50,3 @@
     right: 10px;
 }
 
-<<<<<<< HEAD
-
-=======
-@media (max-width: 768px) {
-    .carousel {
-        height: auto;
-    }
-
-    .carousel__slide img {
-        height: auto;
-    }
-}
->>>>>>> dd0bcc7e7ffbe2d13736a92ab61966da6ce6544f

@@ -10,8 +10,8 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 800px;
-    height: 400px;
+    max-width: 100%;
+    height: auto;
     margin: auto;
     background-color: #f0f0f0;
 }
@@ -23,7 +23,6 @@
 
 .carousel__slide {
     min-width: 100%;
-    transition: opacity 1s ease-in-out;
 }
 
 .carousel__slide img {
@@ -41,6 +40,13 @@
     color: white;
     padding: 10px;
     cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.carousel__button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel__button--prev {
@@ -51,4 +57,16 @@
     right: 10px;
 }
 
+<<<<<<< HEAD
 
+=======
+@media (max-width: 768px) {
+    .carousel {
+        height: auto;
+    }
+
+    .carousel__slide img {
+        height: auto;
+    }
+}
+>>>>>>> dd0bcc7e7ffbe2d13736a92ab61966da6ce6544f

@@ -10,7 +10,7 @@ export class Carousel extends HTMLElement {
             'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMGZsb3dlcnN8ZW58MHx8fHwxNjI4NDAwNjQ3&ixlib=rb-1.2.1&q=80&w=2048',
             'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMHNlYXNjYXBlfGVufDB8fHx8MTYyODQwMDY0Nw&ixlib=rb-1.2.1&q=80&w=2048'
         ];
-        
+
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./src/components/home/Carousel.css">
             <div class="carousel">
@@ -37,6 +37,11 @@ export class Carousel extends HTMLElement {
         this.nextButton.addEventListener('click', () => this.showNextSlide());
 
         this.startAutoSlide();
+        this.slidesContainer.addEventListener('mouseenter', () => this.stopAutoSlide());
+        this.slidesContainer.addEventListener('mouseleave', () => this.startAutoSlide());
+
+        this.updateSlidePosition();
+        window.addEventListener('resize', () => this.updateSlidePosition());
     }
 
     showPrevSlide() {
@@ -58,8 +63,12 @@ export class Carousel extends HTMLElement {
         this.autoSlideInterval = setInterval(() => this.showNextSlide(), 3000);
     }
 
-    disconnectedCallback() {
+    stopAutoSlide() {
         clearInterval(this.autoSlideInterval);
+    }
+
+    disconnectedCallback() {
+        this.stopAutoSlide();
     }
 }
 

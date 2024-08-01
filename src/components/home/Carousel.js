@@ -4,11 +4,9 @@ export class Carousel extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.currentIndex = 0;
         this.slides = [
-            'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMGxhbmRzY2FwZXN8ZW58MHx8fHwxNjI4NDAwNjQ3&ixlib=rb-1.2.1&q=70&w=1200',
-            'https://images.unsplash.com/photo-1494202643030-211a6d7aaf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMHNreXxlbnwwfHx8fDE2Mjg0MDA2NDc&ixlib=rb-1.2.1&q=70&w=1200',
-            'https://images.unsplash.com/photo-1516110833967-0b5716d9c51f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMGZvcmVzdHxlbnwwfHx8fDE2Mjg0MDA2NDc&ixlib=rb-1.2.1&q=70&w=1200',
-            'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMGZsb3dlcnN8ZW58MHx8fHwxNjI4NDAwNjQ3&ixlib=rb-1.2.1&q=70&w=1200',
-            'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYXV0aWZ1bCUyMHNlYXNjYXBlfGVufDB8fHx8MTYyODQwMDY0Nw&ixlib=rb-1.2.1&q=70&w=1200'
+            'https://via.placeholder.com/1200x800.png?text=Slide+1',
+            'https://via.placeholder.com/1200x800.png?text=Slide+2',
+            'https://via.placeholder.com/1200x800.png?text=Slide+3'
         ];
         
 

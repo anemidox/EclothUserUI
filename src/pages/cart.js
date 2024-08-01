@@ -1,7 +1,10 @@
+import { Box } from "../components/cart/Box.js";
+import { Button } from "../components/cart/Button.js";
+
 const cart = () => {
     return (`
-        <div class="cart">
-            <h1>This is cart</h1>
+        <cart-box></cart-box>
+        <cart-box-button></cart-box-button>
     `)
 }
 

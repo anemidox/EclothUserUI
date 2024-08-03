@@ -6,7 +6,7 @@ export class Return extends HTMLElement {
             <style>
                 .return {
                     font-size: 1rem;
-                    color: #333;
+                    color: red;
                 }
             </style>
             <button class="return">Return</button>

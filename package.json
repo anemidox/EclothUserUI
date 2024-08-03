@@ -1,0 +1,25 @@
+{
+  "name": "userfrontend",
+  "version": "1.0.0",
+  "description": "eclothing",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "dev": "nodemon --exec lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/anemidox/pillprimeUserUI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anemidox/pillprimeUserUI/issues"
+  },
+  "homepage": "https://github.com/anemidox/pillprimeUserUI#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "nodemon": "^3.1.4"
+  }
+}

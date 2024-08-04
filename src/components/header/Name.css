@@ -6,7 +6,7 @@
 
 .name {
     display: flex;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .name img {
@@ -16,14 +16,14 @@
 
 @media (max-width: 480px) {
     .name img {
-        width: 120px;
+        width: 40px;
         height: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .name img {
-        width: 100px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
     }
 }

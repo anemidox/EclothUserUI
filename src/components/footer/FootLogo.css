@@ -1,0 +1,12 @@
+.footlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footlogo img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}

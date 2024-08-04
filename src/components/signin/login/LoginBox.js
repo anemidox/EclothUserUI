@@ -4,7 +4,7 @@ export class LoginBox extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="src/components/signin/login/LoginBox.css">
-
+            <h1>Hello, Login</h1>
         `;
     }
 }

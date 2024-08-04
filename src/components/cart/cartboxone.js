@@ -4,7 +4,7 @@ export class cratboxone extends HTMLElement {
       this.attachShadow({ mode: "open" });
       this.shadowRoot.innerHTML = `
        <link rel="stylesheet" href="src/components/cart/cartboxone.css">
-         <div class="cart-item">
+        <div class="cart-item">
         <img src="path/to/product-image.jpg" alt="Product Image">
         <div class="cart-item-details">
           <div class="cart-item-title">Product Title</div>
@@ -16,7 +16,6 @@ export class cratboxone extends HTMLElement {
           <button class="increase-quantity">+</button>
           <button class="remove-item">Remove</button>
         </div>
-        <div class="cart-item-total">$19.99</div>
       </div>
       `;
     }

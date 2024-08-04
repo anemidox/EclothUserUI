@@ -1,17 +1,17 @@
-export class Return extends HTMLElement {
+export class Home extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <style>
-                .return {
+                .home {
                     font-size: 1.5rem;
                     color: #ffffff;
                 }
             </style>
-            <p class="return">Return</p>
+            <p class="home">Home</p>
         `;
     }
 }
 
-customElements.define('app-return', Return);
+customElements.define('app-home', Home);

@@ -1,17 +1,17 @@
-export class Return extends HTMLElement {
+export class ContactUs extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <style>
-                .return {
+                .contactus {
                     font-size: 1.5rem;
                     color: #ffffff;
                 }
             </style>
-            <p class="return">Return</p>
+            <p class="contactus">Contact Us</p>
         `;
     }
 }
 
-customElements.define('app-return', Return);
+customElements.define('app-contactus', ContactUs);

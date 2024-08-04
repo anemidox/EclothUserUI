@@ -4,19 +4,20 @@ export class Carousel extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.currentIndex = 0;
         this.slides = [
-            'https://via.placeholder.com/800x400?text=Slide+1',
-            'https://via.placeholder.com/800x400?text=Slide+2',
-            'https://via.placeholder.com/800x400?text=Slide+3',
-            'https://via.placeholder.com/800x400?text=Slide+4',
-            'https://via.placeholder.com/800x400?text=Slide+5'
+            {src: 'https://via.placeholder.com/800x400?text=Slide+1', text: 'Welcome to Our New Collection'},
+            {src: 'https://via.placeholder.com/800x400?text=Slide+2', text: 'Discover Our Latest Trends'},
+            {src: 'https://via.placeholder.com/800x400?text=Slide+3', text: 'Shop Now and Save'},
+            {src: 'https://via.placeholder.com/800x400?text=Slide+4', text: 'Explore Our New Arrivals'},
+            {src: 'https://via.placeholder.com/800x400?text=Slide+5', text: 'Exclusive Offers Just for You'}
         ];
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./src/components/home/Carousel.css">
             <div class="carousel">
                 <div class="carousel__slides">
-                    ${this.slides.map(src => `
+                    ${this.slides.map(({src, text}) => `
                         <div class="carousel__slide">
                             <img src="${src}" alt="slide">
+                            <div class="carousel__text">${text}</div>
                         </div>
                     `).join('')}
                 </div>

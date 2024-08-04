@@ -4,12 +4,13 @@ export class Cart extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
             <style>
+             @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
                 .cart {
-                    font-size: 1rem;
-                    color: #333;
+                    font-size: 2.5rem;
+                    color: #ffffff;
                 }
             </style>
-            <button class="cart">Cart</button>
+            <div class="cart"><i class='fas fa-shopping-cart'></i></div>
         `;
     }
 }

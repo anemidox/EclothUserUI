@@ -3,10 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #232f3e;
-    color: #fff;
+    background-color: #24262b;
+    color: #ffffff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 /* Navigation styling */
@@ -63,8 +64,11 @@ app-search {
 
 /* Icon styling */
 .list-item app-logo,
+.list-item app-home,
 .list-item app-return,
+.list-item app-contactus,
 .list-item app-login,
+.list-item app-menu,
 .list-item app-cart {
     height: 24px;
     width: 24px;
@@ -74,7 +78,11 @@ app-search {
     margin-right: 10px;
 }
 
-.item-four, .item-five, .item-six {
+.item-six{
+    margin-right: 170px;
+}
+
+.item-four, .item-five, .item-six, .item-seven, .item-eight, .item-nine {
     display: flex;
     align-items: center;
 }

@@ -62,7 +62,8 @@ export class BoxFooter extends HTMLElement {
               <li><a href="#">Returns & Replacements</a></li>
               <li><a href="#">Manage Your Content and Devices</a></li>
               <li><a href="#">Amazon Assistant</a></li>
-              <li><a href="#/about" onclick="/about">Help</a></li>
+              <li><a href="#/aboutus" onclick="/aboutus">Help</a></li>
+
             </ul>
           </div>
         </div>

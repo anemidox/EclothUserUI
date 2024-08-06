@@ -1,9 +1,10 @@
+/* HomeOneBox.css */
 .home-one-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px;
-  background: linear-gradient(135deg, #dfdc0a, #f39c12, #e74c3c);
+  padding: 40px;
+  /* background: linear-gradient(135deg, #dfdc0a, #f39c12, #e74c3c); */
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -11,7 +12,8 @@
 
 .home-one-box:hover {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #0a80ba, #0dc6d3, #031439);
+  background: linear-gradient(135deg, #000000, #146eb4, #ffffff);
+
 }
 
 .box {
@@ -21,27 +23,28 @@
 #product-id {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #00796b;
+  color: black;
   margin-bottom: 12px;
 }
 
 #product-image {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
-  border: 2px solid #009688;
+  border:none;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .home-one-box:hover #product-image {
   transform: scale(1.1);
-  border-color: #004d40;
+  border-color: none;
 }
 
 .box p {
   margin: 0;
-  color: #004d40;
+  color: #2f004d;
 }
 
 .box p::after {

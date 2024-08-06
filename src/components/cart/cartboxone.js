@@ -5,10 +5,11 @@ export class cratboxone extends HTMLElement {
       this.shadowRoot.innerHTML = `
        <link rel="stylesheet" href="src/components/cart/cartboxone.css">
         <div class="cart-item">
-        <img src="path/to/product-image.jpg" alt="Product Image">
+        <img src="/public/icon/images.jpg" alt="Product Image">
         <div class="cart-item-details">
           <div class="cart-item-title">Product Title</div>
           <div class="cart-item-price">$19.99</div>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="cart-item-actions">
           <button class="decrease-quantity">-</button>

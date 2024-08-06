@@ -6,7 +6,6 @@ export class BoxColor extends HTMLElement {
       <link rel="stylesheet" href="src/components/signin/BoxColor.css">
       <div class="signin-container">
         <h2>Sign In</h2>
-        <h2>git check<h2>
         <form id="signin-form">
           <label for="email">Email or mobile phone number</label>
           <input type="email" id="email" name="email" required>

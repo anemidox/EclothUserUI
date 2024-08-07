@@ -10,6 +10,7 @@ const home = () => {
             <app-carousel></app-carousel>
             <div class="home-display-box">
             </div>
+            <app-home-box></app-home-box>
             <product-carousel></product-carousel>
         </div>
     `);

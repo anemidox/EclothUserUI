@@ -1,8 +1,8 @@
-import { LoginBox } from "../components/signin/login/LoginBox.js";
+import { BoxColor } from "../components/signin/BoxColor.js";
 
 const signin = () => {
     return (`
-        <login-box></login-box>
+        <box-color></box-color>
     `)
 }
 

@@ -5,7 +5,7 @@
 }
 
 .search {
-    width: 100%;
+    width: 200%;
     padding: 0.75rem 1rem;
     margin: 0.5rem 0;
     border: 1px solid #333;
@@ -65,9 +65,9 @@
 
 @media (max-width: 768px) {
     .search {
+        width: 70%; 
         font-size: 0.875rem;
         height: 48px;
-        width: 94%;
     }
 
     .button {
@@ -84,6 +84,7 @@
 
 @media (max-width: 480px) {
     .search {
+        width: 80%; 
         font-size: 0.75rem;
         height: 30px;
     }

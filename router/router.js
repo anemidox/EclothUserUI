@@ -14,11 +14,7 @@ const routes = {
   '/signin': Signin,
   '/cart': Cart,
   '/productlist' : ProductList,
-
-  // Footer...
-  '/aboutus': AboutUs,
-  '/ourservice': OurService,
-  '/privacypolicy': privacy,
+  
 };
 
 function router() {

@@ -1,6 +1,6 @@
 const privacy = () => {
     return (`
-        <h1>Privacy</h1>
+
     `)
 }
 

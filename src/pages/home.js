@@ -1,5 +1,7 @@
 import { Carousel } from "../components/home/Carousel.js";
 import { HomeBox } from "../components/home/HomeBox.js";
+import { ProductCarousel } from "../components/home/ProductCarousel.js";
+
 
 const home = () => {
     return (`
@@ -7,8 +9,8 @@ const home = () => {
         <div class="home">
             <app-carousel></app-carousel>
             <div class="home-display-box">
-                <app-home-box></app-home-box>
             </div>
+            <product-carousel></product-carousel>
         </div>
     `);
 }

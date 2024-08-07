@@ -8,10 +8,9 @@ export class Carousel extends HTMLElement {
             'https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg',
             'https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg',
         ];
-        
 
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./src/components/home/Carousel.css">
+            <link rel="stylesheet" href="/src/components/home/Carousel.css">
             <div class="carousel">
                 <div class="carousel__slides">
                     ${this.slides.map(src => `
@@ -22,6 +21,11 @@ export class Carousel extends HTMLElement {
                 </div>
                 <button class="carousel__button carousel__button--prev">❮</button>
                 <button class="carousel__button carousel__button--next">❯</button>
+                <div class="carousel__indicators">
+                    ${this.slides.map((_, index) => `
+                        <div class="carousel__indicator" data-index="${index}"></div>
+                    `).join('')}
+                </div>
             </div>
         `;
     }
@@ -30,10 +34,18 @@ export class Carousel extends HTMLElement {
         this.prevButton = this.shadowRoot.querySelector('.carousel__button--prev');
         this.nextButton = this.shadowRoot.querySelector('.carousel__button--next');
         this.slidesContainer = this.shadowRoot.querySelector('.carousel__slides');
+        this.indicators = Array.from(this.shadowRoot.querySelectorAll('.carousel__indicator'));
         this.totalSlides = this.slides.length;
 
         this.prevButton.addEventListener('click', () => this.showPrevSlide());
         this.nextButton.addEventListener('click', () => this.showNextSlide());
+        this.indicators.forEach(indicator => {
+            indicator.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                this.currentIndex = index;
+                this.updateSlidePosition();
+            });
+        });
 
         this.startAutoSlide();
         this.slidesContainer.addEventListener('mouseenter', () => this.stopAutoSlide());
@@ -56,6 +68,17 @@ export class Carousel extends HTMLElement {
     updateSlidePosition() {
         const slideWidth = this.slidesContainer.clientWidth;
         this.slidesContainer.style.transform = `translateX(-${this.currentIndex * slideWidth}px)`;
+        this.updateIndicators();
+    }
+
+    updateIndicators() {
+        this.indicators.forEach((indicator, index) => {
+            if (index === this.currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
     }
 
     startAutoSlide() {

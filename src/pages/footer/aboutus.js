@@ -1,6 +1,6 @@
 const aboutus = () => {
     return (`
-        
+        <h1>About Us</h1>
     `)
 }
 

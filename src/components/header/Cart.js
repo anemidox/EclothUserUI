@@ -13,7 +13,7 @@ export class Cart extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        const cartIcon = '<img src="public/icon/e.png">';
+        const cartIcon = '<img src="public/icon/cart.png">';
         this.shadowRoot.innerHTML = `
             <style>
                 .cart {

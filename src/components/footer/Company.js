@@ -7,9 +7,10 @@ export class Company extends HTMLElement {
             <div class="contactus">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="#/aboutus" onclick="navigateTo('/aboutus')">About Us</a></li>
+                    <li><a href="#/about" onclick="navigateTo('/about')">About Us</a></li>
                     <li><a href="#/ourservice" onclick="navigateTo('/ourservice')">Our Service</a></li>
-                    <li><a href="#/privacypolicy" onclick="navigateTo('/privacypolicy')">Privacy Policy</a></li> 
+                    <li><a href="#/privacy" onclick="navigateTo('/privacy')">Privacy Policy</a></li> 
+                    <li><a href="#/seller" onclick="navigateTo('/seller')">Seller</a></li>
                 </ul>
             </div>
         `;

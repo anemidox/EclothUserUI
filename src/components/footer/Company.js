@@ -3,7 +3,7 @@ export class Company extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-        <link rel = "stylesheet" href = "/src/components/footer/Company.css">
+        <link rel = "stylesheet" href = "src/components/footer/Company.css">
             <div class="contactus">
                 <h3>Company</h3>
                 <ul>

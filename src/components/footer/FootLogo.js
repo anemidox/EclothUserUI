@@ -5,7 +5,7 @@ export class FootLogo extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="src/components/footer/FootLogo.css">
             <div class="footlogo"><a href="#/" onclick="navigetTo(/)">
-                <img src="/public/icon/logo.png" alt="logo"/>
+                <img src="public/icon/logo.png" alt="logo"/>
             </a>
             </div>
         `;

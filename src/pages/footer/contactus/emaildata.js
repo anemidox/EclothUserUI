@@ -1,7 +1,9 @@
+
+
 const emaildata = () => {
-    return (`
-        <h1>Email Data</h1>
-    `)
+    return `
+        <map-contact></map-contact>
+    `;
 }
 
 export default emaildata;

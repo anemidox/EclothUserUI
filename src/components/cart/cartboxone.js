@@ -7,6 +7,7 @@ export class cratboxone extends HTMLElement {
         <div class="cart-item">
         <img src="/public/icon/logo.png" alt="Product Image">
         <div class="cart-item-details">
+        <hr>
           <div class="cart-item-title">Product Title</div>
           <div class="cart-item-price">$19.99</div>
           <button class="add-to-cart">Add to Cart</button>

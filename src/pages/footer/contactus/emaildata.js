@@ -1,4 +1,4 @@
-
+import { Map } from "../../../components/footer/Map.js";
 
 const emaildata = () => {
     return `

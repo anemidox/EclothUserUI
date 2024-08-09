@@ -40,3 +40,52 @@ a:hover {
 a:active {
     color: #003d80;
 }
+
+
+
+
+
+
+
+/* For The Contact Icons */
+
+h4
+{
+    text-decoration: underline;
+}
+
+
+.contacticon 
+{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.contactlist 
+{
+    margin: 0;
+}
+
+.contacta
+{
+    display: block;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.contacta:hover 
+{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.contactimg 
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}

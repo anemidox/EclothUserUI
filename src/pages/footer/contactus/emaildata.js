@@ -1,8 +1,6 @@
-import { Map } from "../../../components/footer/Map.js";
-
 const emaildata = () => {
     return `
-        <map-contact></map-contact>
+        <h1>Email Us</h1>
     `;
 }
 

@@ -1,14 +1,13 @@
-import header from "./src/common/header.js";
-import { router } from "./router/router.js";
-import footer from "./src/common/footer.js";
+import { Header } from "./src/common/Header.js";
+import { router } from "./src/router/router.js";
+import { Footer } from "./src/common/Footer.js";
 
 const app = () => {
-    return `
-    <link rel="stylesheet" href="app.css">
-        ${header()}
+    return (`
+        <my-header></my-header>
         <div id="app"></div>
-        ${footer()}
-    `;
+        <my-footer></my-footer>
+    `);
 }
 
 export default app;

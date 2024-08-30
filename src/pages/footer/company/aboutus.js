@@ -1,7 +1,7 @@
 const aboutus = () => {
     return (`
-        <h1>This is about us</h1>
-    `)
+        <h1>About Us</h1>
+    `);
 }
 
 export default aboutus;

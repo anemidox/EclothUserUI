@@ -1,7 +1,10 @@
 node_modules/
 package-lock.json
 jest.config.js
+webpack.config.js
 .babelrc
 /coverage
 /dist
 /test
+__mocks__/
+config/

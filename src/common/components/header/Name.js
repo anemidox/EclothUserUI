@@ -1,5 +1,3 @@
-const imagePath = ('src/assets/images/logo.png');
-
 const style = document.createElement('style');
 style.textContent = `
     h1 {

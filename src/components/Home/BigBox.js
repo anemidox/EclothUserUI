@@ -1,22 +1,35 @@
 const template = document.createElement('template');
 template.innerHTML = `
-    <div class="home">
-        <slot name="big-box"></slot>
+    <div class="big-home">
+        <div class="inner">
+            <slot name="big-box"></slot>
+        </div>
     </div>
 `;
 
 const style = document.createElement('style');
 style.textContent = `
-    ::slotted([slot="big-box"]) {
-        color: green;
+    
+    .big-home {
+        width: auto;
+        height: 600px;
+        margin 10px auto;
     }
+
+    big-box img {
+        width: 100%;
+        height: auto;
+    }
+
 `;
+
 
 class BigBox extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(style);
+        // this.shadowRoot.appendChild(style);
+        this.shadowRoot.appendChild(style.cloneNode(true));
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 

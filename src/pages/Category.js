@@ -1,20 +1,18 @@
-import Category from "../components/Home/Category.js";
-
 const template = document.createElement('template');
 template.innerHTML = `
-    <div class="main">
-        <category-box></category-box>
+    <div>
+        <h1>Category</h1>
     </div>
 `;
 
 const style = document.createElement('style');
 style.textContent = ` 
-    .main {
-        
+    h1 {
+        color: red;
     }
 `;
 
-class Home extends HTMLElement {
+class Category extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -27,12 +25,12 @@ class Home extends HTMLElement {
     }
 }
 
-customElements.define('home-page', Home);
+customElements.define('category-page', Category);
 
-const HomeComponent = () => {
+const CategoryComponent = () => {
     return (`
-        <home-page></home-page>   
+        <category-page></category-page>   
     `);
 }
 
-export default HomeComponent;
+export default CategoryComponent;

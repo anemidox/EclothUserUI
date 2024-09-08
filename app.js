@@ -4,10 +4,10 @@ import { Footer } from './src/common/Footer.js';
 
 const app = () => {
     return (`
-        <div>
+        <div>   
             <app-header></app-header>
             <div id="app"></div>
-            <app-footer></app-footer>
+            
         </div>
     `);
 }

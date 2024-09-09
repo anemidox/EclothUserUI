@@ -1,4 +1,3 @@
-// Example API client function
 export const getProductById = async (id) => {
     try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);

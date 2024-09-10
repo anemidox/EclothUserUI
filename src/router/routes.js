@@ -1,5 +1,3 @@
-// routes.js
-
 import Home from '../pages/Home.js';
 import Category from '../pages/Category.js';
 
@@ -11,7 +9,12 @@ export const routes = {
         title: `Home | ${urlPageTitle}`,
         description: "Home",
     },
-    "/category:name": {
+    "/category/:name": {
+        template: Category,
+        title: `Category | ${urlPageTitle}`,
+        description: "Category Details",
+    },
+    "/category": {
         template: Category,
         title: `Category | ${urlPageTitle}`,
         description: "Category Details",
@@ -36,7 +39,6 @@ export const matchRoute = (path) => {
         return routes[path];
     }
 
-    // Match dynamic routes with regex (like /category/:id)
     const matchedRoute = Object.entries(routes).find(([routePath]) => {
         const routePattern = new RegExp(`^${routePath.replace(/:\w+/g, '\\w+')}$`);
         return routePattern.test(path);

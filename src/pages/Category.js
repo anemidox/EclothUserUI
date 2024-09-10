@@ -10,6 +10,7 @@ template.innerHTML = `
         <div class="main">
             <main-box></main-box>
         </div>
+        <h1></h1>
     </div>
 `;
 
@@ -18,14 +19,14 @@ style.textContent = `
     .container {
         display: grid;
         grid-template-columns: 1fr 5fr;
-        gap: 10px; /* Add spacing between side and main sections */
-        height: 100vh; /* Full viewport height */
+        gap: 10px; 
+        height: 100vh; 
     }
 
     .side {
         background-color: yellow;
         padding: 10px;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Add subtle shadow for separation */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
     }
 
     .main {  
@@ -43,8 +44,14 @@ class Category extends HTMLElement {
     }
 
     connectedCallback() {
-        // Any further actions once the component is connected can be added here
+        const categoryName = window.location.pathname.split('/category/')[1];
+        if (categoryName) {
+            this.shadowRoot.querySelector('h1').textContent = categoryName;
+        } else {
+            console.error('No category name found in the URL');
+        }
     }
+    
 }
 
 customElements.define('category-page', Category);

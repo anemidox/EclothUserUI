@@ -1,8 +1,7 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <div class="side-box">
-        <button data-category="1">Category 1</button>
-        <button data-category="2">Category 2</button>
+        
     </div>
 `;
 

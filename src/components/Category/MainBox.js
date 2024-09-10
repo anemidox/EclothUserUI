@@ -1,32 +1,28 @@
+import Box from './main/Box.js';
+
 const template = document.createElement('template');
 template.innerHTML = `
     <div class="main-box">
-        <div id="products"></div>
+        <div>
+            <product-box></product-box>
+        </div>
+        <div>
+            <product-box></product-box>
+        </div>
+        <div>
+            <product-box></product-box>
+        </div>
     </div>
 `;
 
 const style = document.createElement('style');
 style.textContent = `
     .main-box {
-        padding: 20px;
-    }
-
-    #products {
+        padding: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
     }
 
-    .product-item {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .product-item img {
-        width: 100%;
-        height: auto;
-    }
 `;
 
 class MainBox extends HTMLElement {

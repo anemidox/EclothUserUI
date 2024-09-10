@@ -1,17 +1,32 @@
 const template = document.createElement('template');
 template.innerHTML = `
-    <div class="continer">
+    <div class="container">
         <div class="product">
-            <h1>Product</h1>
-        <div>
+            
+        </div>
     </div>
 `;
 
 const style = document.createElement('style');
 style.textContent = `
+    .container {
+        display: flex;
+        align-items: center;   
+        height: 100%; 
+        margin: 0;   
+        padding: 0;
+        box-sizing: border-box;     
+    }
+
     .product {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex; 
+        flex-direction: column; 
+        background-color: lightgreen;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; 
+        width: 350px; 
+        height: 550px; 
+        box-sizing: border-box; 
     }
 `;
 
@@ -24,7 +39,7 @@ class Box extends HTMLElement {
     }
 
     connectedCallback() {
-        // Any additional logic when the element is added to the DOM
+        // Additional logic if needed
     }
 }
 

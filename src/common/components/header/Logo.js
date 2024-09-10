@@ -1,17 +1,20 @@
-const iconPath = ('src/assets/images/logo.png');
+import { navigateTo } from "../../../router/router.js";
+
+const iconPath = 'src/assets/images/logo.png';
 
 const style = document.createElement('style');
 style.textContent = `
     img {
         width: 60px;
         height: auto;
+        cursor: pointer;
     }
 `;
 
 const template = document.createElement('template');
 template.innerHTML = `
-    <div>
-        <img src="${iconPath}" alt="Logo" />
+    <div id="logo">
+        <img src="${iconPath}" alt="Logo" title="Go to Home Page" /> 
     </div>
 `;
 
@@ -22,8 +25,16 @@ class Logo extends HTMLElement {
         this.shadowRoot.appendChild(style.cloneNode(true));
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
+
     connectedCallback() {
-        // Optional: Additional setup if needed
+        this.addNavigation();
+    }
+
+    addNavigation() {
+        const logoElement = this.shadowRoot.querySelector('img');
+        logoElement.addEventListener('click', () => {
+            navigateTo('/');
+        });
     }
 }
 

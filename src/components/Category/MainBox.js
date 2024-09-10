@@ -37,28 +37,8 @@ class MainBox extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 
-    set products(value) {
-        this._products = value;
-        this.renderProducts();
-    }
-
-    renderProducts() {
-        const productsContainer = this.shadowRoot.querySelector('#products');
-        productsContainer.innerHTML = '';
-
-        if (this._products) {
-            this._products.forEach(product => {
-                const productItem = document.createElement('div');
-                productItem.className = 'product-item';
-                productItem.innerHTML = `
-                    <img src="${product.image_url}" alt="${product.name}">
-                    <h2>${product.name}</h2>
-                    <p>${product.description}</p>
-                    <p>Price: $${product.price}</p>
-                `;
-                productsContainer.appendChild(productItem);
-            });
-        }
+    connectedCallback() {
+        
     }
 }
 

@@ -1,5 +1,5 @@
 import { Header } from './src/common/Header.js';
-import { urlLocationHandler } from './src/router/routes.js';
+import { urlLocationHandler } from './src/router/router.js';
 import { Footer } from './src/common/Footer.js';
 
 const app = () => {

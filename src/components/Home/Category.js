@@ -1,6 +1,6 @@
 import SmallBox from './SmallBox.js';
 import BigBox from './BigBox.js';
-import { navigateTo } from '../../router/routes.js'; 
+import { navigateTo } from '../../router/router.js'; 
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -184,6 +184,15 @@ class CategoryBox extends HTMLElement {
         } else {
             console.error(`Box not found: ${selector}`);
         }
+    }
+
+    dispatchCategoryChangeEvent(categoryId) {
+        const event = new CustomEvent('category-change', {
+            detail: { categoryId },
+            bubbles: true,
+            composed: true
+        });
+        this.dispatchEvent(event);
     }
 }
 

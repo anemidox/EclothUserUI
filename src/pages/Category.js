@@ -1,4 +1,3 @@
-import { getProductByCategory } from '../api/getProductByCatogory.js';
 import SideBox from '../components/Category/SideBox.js';
 import MainBox from '../components/Category/MainBox.js';
 
@@ -19,14 +18,19 @@ style.textContent = `
     .container {
         display: grid;
         grid-template-columns: 1fr 5fr;
+        gap: 10px; /* Add spacing between side and main sections */
+        height: 100vh; /* Full viewport height */
     }
 
     .side {
         background-color: yellow;
+        padding: 10px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Add subtle shadow for separation */
     }
 
     .main {  
         background-color: lightblue;
+        padding: 10px;
     }
 `;
 
@@ -36,30 +40,10 @@ class Category extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(style.cloneNode(true));
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this._categoryId = null;
     }
 
     connectedCallback() {
-        this.shadowRoot.querySelector('side-box').addEventListener('category-selected', (event) => {
-            this._categoryId = event.detail.categoryId;
-            this.loadProducts();
-        });
-    }
-
-    async loadProducts() {
-        if (!this._categoryId) return;
-
-        try {
-            const products = await getProductByCategory(this._categoryId);
-            this.displayProducts(products);
-        } catch (error) {
-            console.error('Failed to load products:', error);
-        }
-    }
-
-    displayProducts(products) {
-        const mainBox = this.shadowRoot.querySelector('main-box');
-        mainBox.products = products;
+        // Any further actions once the component is connected can be added here
     }
 }
 

@@ -1,19 +1,19 @@
-import { routes, matchRoute } from './routes.js';
+import { routes, matchRoute, normalizePath } from './routes.js';
 
-const appElementId = 'app'; // ID of the main container where content will be rendered
+// Handle route changes
+export const urlLocationHandler = async () => {
+    let path = window.location.pathname || "/";
+    path = normalizePath(path);
 
-export const renderRoute = async (path) => {
     const route = matchRoute(path);
-    const { component, template = '<h1>Something went wrong</h1>', title, description } = route;
+    const { template = '<h1>Something went wrong</h1>', title = `Error | E Cloth`, description = "An error occurred" } = route;
 
     try {
-        const content = typeof component === 'function' ? await component() : template;
-        const appElement = document.getElementById(appElementId);
-
+        const content = typeof template === 'function' ? await template() : template;
+        const appElement = document.getElementById("app");
         if (appElement) {
             appElement.innerHTML = content;
             document.title = title;
-
             let metaDescription = document.querySelector('meta[name="description"]');
             if (!metaDescription) {
                 metaDescription = document.createElement('meta');
@@ -22,31 +22,25 @@ export const renderRoute = async (path) => {
             }
             metaDescription.content = description;
         } else {
-            console.error(`Element with id "${appElementId}" not found.`);
+            console.error('Element with id "app" not found.');
         }
     } catch (error) {
         console.error('Error handling route:', error);
-        const appElement = document.getElementById(appElementId);
+        const appElement = document.getElementById("app");
         if (appElement) {
             appElement.innerHTML = '<h1>Something went wrong</h1>';
         }
     }
 };
 
-export const navigateTo = (path) => {
+// Handle browser navigation (back/forward buttons)
+window.onpopstate = urlLocationHandler;
+
+// Initialize routing on page load
+urlLocationHandler();
+
+// Navigate to a new path
+export function navigateTo(path) {
     window.history.pushState({}, "", path);
-    renderRoute(path);
-};
-
-window.onpopstate = () => renderRoute(window.location.pathname);
-
-export const initializeRouter = () => renderRoute(window.location.pathname);
-
-document.addEventListener("click", (event) => {
-    const { target } = event;
-    if (target.tagName === 'A' && target.href) {
-        event.preventDefault();
-        const path = new URL(target.href).pathname;
-        navigateTo(path);
-    }
-});
+    window.dispatchEvent(new PopStateEvent('popstate'));
+}

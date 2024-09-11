@@ -48,6 +48,7 @@ class Category extends HTMLElement {
         if (categoryName) {
             this.shadowRoot.querySelector('h1').textContent = categoryName;
             console.log(categoryName);
+            // important
         } else {
             console.error('No category name found in the URL');
         }

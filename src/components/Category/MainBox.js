@@ -1,17 +1,9 @@
-import Box from './main/Box.js';
+import Box from './main/Box.js';  // Ensure this import path is correct
 
 const template = document.createElement('template');
 template.innerHTML = `
     <div class="main-box">
-        <div>
-            <product-box></product-box>
-        </div>
-        <div>
-            <product-box></product-box>
-        </div>
-        <div>
-            <product-box></product-box>
-        </div>
+        <slot name="product-box"></slot>
     </div>
 `;
 
@@ -21,8 +13,8 @@ style.textContent = `
         padding: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;  /* Add some spacing between items */
     }
-
 `;
 
 class MainBox extends HTMLElement {
@@ -34,7 +26,36 @@ class MainBox extends HTMLElement {
     }
 
     connectedCallback() {
-        
+        // Example data fetching and rendering; replace with actual data source
+        this.fetchData();
+    }
+
+    async fetchData() {
+        try {
+            const response = await fetch('https://api.anemidox.live/api/v1/controllers/ProductController.php'); // Adjust API URL
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            const data = await response.json();
+            this.renderProductBoxes(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    renderProductBoxes(products) {
+        const container = this.shadowRoot.querySelector('.main-box');
+        container.innerHTML = '';  // Clear any existing content
+
+        products.forEach(product => {
+            const productBox = document.createElement('product-box');
+            productBox.setAttribute('image-url', product.image_url);
+            productBox.setAttribute('name', product.name);
+            productBox.setAttribute('price', product.price);
+            // Set other attributes if needed
+
+            container.appendChild(productBox);
+        });
     }
 }
 

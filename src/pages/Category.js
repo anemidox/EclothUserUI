@@ -5,12 +5,12 @@ const template = document.createElement('template');
 template.innerHTML = `
     <div class="container">
         <div class="side">
+            <h1></h1>
             <side-box></side-box>
         </div>
         <div class="main">
             <main-box></main-box>
         </div>
-        <h1></h1>
     </div>
 `;
 
@@ -47,6 +47,7 @@ class Category extends HTMLElement {
         const categoryName = window.location.pathname.split('/category/')[1];
         if (categoryName) {
             this.shadowRoot.querySelector('h1').textContent = categoryName;
+            console.log(categoryName);
         } else {
             console.error('No category name found in the URL');
         }

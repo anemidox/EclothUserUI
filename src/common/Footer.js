@@ -6,7 +6,6 @@ style.textContent = `
         color: white;
         text-align: center;
         padding: 10px 0;
-        position: fixed;
         bottom: 0;
         width: 100%;
     }
@@ -42,4 +41,10 @@ class Footer extends HTMLElement {
 customElements.define('app-footer', Footer);
 
 // Export the custom element class (typically, you use this in your HTML directly)
-export { Footer };
+const FooterApp = () => {
+    return `
+        <app-footer></app-footer>
+    `
+}
+
+export { FooterApp };

@@ -1,12 +1,12 @@
-import { Header } from './src/common/Header.js';
+import { AppHeader } from './src/common/Header.js';
 import { urlLocationHandler } from './src/router/router.js';
-import { Footer } from './src/common/Footer.js';
+// import { FooterApp } from './src/common/Footer.js';
 
 const app = () => {
     document.body.innerHTML = `
-        <app-header></app-header>
+        ${AppHeader()}
         <div id="app"></div>
-        
+
     `;
 };
 

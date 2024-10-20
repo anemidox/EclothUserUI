@@ -5,8 +5,8 @@ style.textContent = `
     button {
         padding: 5px;
         border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: #333;
+        border: 1px solid #e0f2fe;
+        background-color: #e11d48;
         color: white;
         cursor: pointer; /* Improve usability with a pointer cursor */
     }

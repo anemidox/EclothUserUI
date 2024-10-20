@@ -1,5 +1,6 @@
 import Home from '../pages/Home.js';
 import Category from '../pages/Category.js';
+import Product from '../pages/Product.js';
 
 const urlPageTitle = "E Cloth";
 
@@ -16,8 +17,18 @@ export const routes = {
     },
     "/category": {
         template: Category,
-        title: `Category | ${urlPageTitle}`,
+        title: `Category | ${urlPageTitle}`, 
         description: "Category Details",
+    },
+    "/product/:id": {
+        template: Product,
+        title: `Product | ${urlPageTitle}`,
+        description: "Product Details",
+    },
+    "/product": {
+        template: Product,
+        title: `Product | ${urlPageTitle}`,
+        description: "Product Details",
     },
     404: {
         template: '<h1>404 Not Found</h1>',

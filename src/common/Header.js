@@ -14,7 +14,7 @@ style.textContent = `
         justify-content: space-between;
         align-items: center;
         height: 60px;
-        background-color: #333;
+        background-color: #fca5a5;
         color: white;
     }
 `;
@@ -50,4 +50,10 @@ class Header extends HTMLElement {
 customElements.define('app-header', Header);
 
 // Export the custom element class (use this in HTML or other components)
-export { Header };
+const AppHeader = () => {
+    return `
+        <app-header></app-header>
+    `
+}
+
+export { AppHeader };

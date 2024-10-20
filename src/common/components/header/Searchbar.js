@@ -5,15 +5,16 @@ style.textContent = `
     input {
         border-radius: 5px;
         border: 1px solid #ccc;
-        width: 500px;
+        width: 800px;
         height: 30px;
     }
     button {
         padding: 5px;
         border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: #333;
+        border: 1px solid #e0f2fe;
+        background-color: #500724;
         color: white;
+        width: 100px;
     }
 
     img {
@@ -36,7 +37,7 @@ template.innerHTML = `
         </div>
         <div id="icon">
             <button>
-                <img src="${iconpath}/search.svg" alt="Search" />
+                <img src="${iconpath}/search.png" alt="Search" />
             </button>
         </div>
     </div>

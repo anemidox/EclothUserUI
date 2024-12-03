@@ -9,8 +9,8 @@ template.innerHTML = `
         Your browser does not support the video tag.
     </video>
 <div class="overlay-content">
-    <h1 class="typing">Wear the Trend, Own the Moment</h1>
-    <p>Elevate Your Style with Effortless Elegance.</p>
+    <h1 class="text">Wear the Trend, Own the Moment</h1>
+    <p class="button">Elevate Your Style with Effortless Elegance.</p>
     <button class="button" data-text="Awesome">
         <span class="actual-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
         <span aria-hidden="true" class="hover-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
@@ -60,12 +60,6 @@ style.textContent = `
     text-align: center;
     color: white;
     z-index: 1; /* Below the header but above the video */
-}
-
-.overlay-content h1 {
-    font-size:80px;
-    margin-bottom: 1.5rem;
-    color:wihte; 
 }
 
 .overlay-content p {
@@ -143,32 +137,19 @@ style.textContent = `
     height: 100%;
     overflow: hidden; /* Hide the overflowing videos */
 }
-
-.typing {
-  font-family: 'Courier New', monospace; /* You can use any font you'd like */
-  font-size: 36px; /* Adjust the font size as needed */
-  color: #000; /* Adjust the text color as needed */
-  white-space: nowrap; /* Prevents text from wrapping */
-  overflow: hidden; /* Hides the part of text that is not yet typed */
-  border-right: 3px solid black; /* Creates the cursor effect */
-  width: 0;
-  animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
+   .text{
+    position:relative;
+    right:-370px;
+    top:-3px;
+    font-size: 110px;
+    text-align:right;
+    magin:0;
+    line-height: 1.2;
+    --border-right: 10px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    -webkit-text-stroke: 2px var(--text-stroke-color);
+     color:rgba(32, 234, 135, 0.02);
+    }
 
 `;
 

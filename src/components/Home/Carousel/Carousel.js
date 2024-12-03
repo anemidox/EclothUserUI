@@ -1,89 +1,175 @@
+import { Header } from "../../../common/Header.js";
+
 const template = document.createElement('template');
 template.innerHTML = `
-    <div class="background-container">
-        <img src="https://thilakawardhana.com/cdn/shop/files/WEB-COVER_1.jpg?v=1723614117&width=1370" alt="Background Image" class="background-image">
-        <div class="content">
-            <button class="action-btn">Shop Now</button>
-        </div>
-    </div>
+<div class="background-container">
+    <app-header class="header-overlay"></app-header>
+    <video id="video-player" class="background-image" autoplay muted loop>
+        <source src="/src/assets/video/6008256_4k_Attractive_3840x2160.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<div class="overlay-content">
+    <h1 class="typing">Wear the Trend, Own the Moment</h1>
+    <p>Elevate Your Style with Effortless Elegance.</p>
+    <button class="button" data-text="Awesome">
+        <span class="actual-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
+    </button>
+</div>
+</div>
+
 `;
 
 const style = document.createElement('style');
 style.textContent = `
-    .background-container {
-        position: relative;
-        width: 100%; /* Ensure container fits the width of the viewport */
-        height: 500px; /* Fixed height */
-        overflow: hidden; /* Hide any overflow */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for content */
-        margin: 0 auto;
-    }
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
-    .background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensure image covers the container without distortion */
-        z-index: -1;
-    }
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .content {
-        position: relative;
-        text-align: center;
-        color: white;
-        z-index: 1;
-        padding: 1em; /* Add some padding to the content for better visibility */
-    }
+.header-overlay {
+    position: absolute; /* Position the header over the video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Ensure it is above the video */
+    color: white; /* Make text readable over the video */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better separation */
+    /* From https://css.glass */
+    background: rgba(182, 194, 132, 0.03);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+}
 
-    .action-btn {
-        background-color: #ffcc00;
-        border: none;
-        color: white;
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Below the header but above the video */
+}
 
-    .action-btn:hover {
-        background-color: #ffaa00;
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    }
+.overlay-content h1 {
+    font-size:80px;
+    margin-bottom: 1.5rem;
+    color:wihte; 
+}
 
-    .action-btn:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.5);
-    }
+.overlay-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color:wihte; 
+}
 
-    @media (max-width: 768px) {
-        .background-container {
-            height: 400px; /* Adjust height for medium screens */
-        }
+}
 
-        .action-btn {
-            padding: 12px 24px;
-            font-size: 1rem;
-        }
-    }
+.overlay-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    @media (max-width: 480px) {
-        .background-container {
-            height: 300px; /* Adjust height for smaller screens */
-        }
+.overlay-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}  
 
-        .action-btn {
-            padding: 10px 20px;
-            font-size: 0.9rem;
-        }
-    }
+/* From Uiverse.io by satyamchaudharydev */ 
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+//video animation
+
+#video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide the overflowing videos */
+}
+
+.typing {
+  font-family: 'Courier New', monospace; /* You can use any font you'd like */
+  font-size: 36px; /* Adjust the font size as needed */
+  color: #000; /* Adjust the text color as needed */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides the part of text that is not yet typed */
+  border-right: 3px solid black; /* Creates the cursor effect */
+  width: 0;
+  animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 `;
 
 class Carousel extends HTMLElement {
@@ -95,8 +181,39 @@ class Carousel extends HTMLElement {
     }
 
     connectedCallback() {
-        // Any additional logic can go here if needed
+        const videoPlayer = this.shadowRoot.querySelector('#video-player'); // Access the element in the shadow DOM
+        const videos = [
+            "/src/assets/video/6008256_4k_Attractive_3840x2160.mp4",
+            "/src/assets/video/4911645_Woman_Traveler_3840x2160.mp4",
+            "/src/assets/video/3015510-hd_1920_1080_24fps.mp4",
+        ];
+    
+        let currentVideoIndex = 0;
+    
+        // Function to play the next video
+        const playNextVideo = () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length; // Loop back to the first video
+            videoPlayer.src = videos[currentVideoIndex];
+            videoPlayer.load();
+            videoPlayer.play();
+            pa
+        };
+    
+        // // Event listener for click to play the next video
+        videoPlayer.addEventListener('ended', playNextVideo);
+    
+        // Event listener for video ending to automatically play the next video
+        videoPlayer.addEventListener('click', playNextVideo);
+    
+        // Start playing the first video automatically when the component loads
+        videoPlayer.src = videos[currentVideoIndex];
+        videoPlayer.play();
+
+
+        // setInterval(playNextVideo, 10000);
     }
+    
+    
 }
 
 customElements.define('carousel-box', Carousel);

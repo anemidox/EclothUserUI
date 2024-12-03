@@ -3,20 +3,24 @@ import { Logo } from './components/header/Logo.js';
 import { Name } from './components/header/Name.js';
 import { Searchbar } from './components/header/Searchbar.js';
 import { Return } from './components/header/Return.js';
-import { Login } from './components/header/Login.js';
 import { Cart } from './components/header/Cart.js';
+import { Login } from './components/header/Login.js';
 
 // Create and configure style
 const style = document.createElement('style');
 style.textContent = `
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 60px;
-        background-color: #fca5a5;
-        color: white;
-    }
+ header {
+    padding-bottom: 5px;
+    padding-top: 2px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 30px;
+  
+   
+}
+
 `;
 
 // Create and configure template
@@ -52,8 +56,7 @@ customElements.define('app-header', Header);
 // Export the custom element class (use this in HTML or other components)
 const AppHeader = () => {
     return `
-        <app-header></app-header>
     `
 }
-
+export{Header};
 export { AppHeader };

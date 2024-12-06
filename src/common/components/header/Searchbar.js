@@ -1,118 +1,93 @@
-const iconpath = ('src/assets/icons');
-
 const style = document.createElement('style');
 style.textContent = `
-.inputBox_container {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  max-width: 100%;
-  width: 850px;
-  height: 38px;
-  background-color: #5c6370;
-  border-radius: 0.8em;
-  overflow: hidden;
-  /* From https://css.glass */
-background: rgba(153, 149, 149, 0.74);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.9px);
--webkit-backdrop-filter: blur(4.9px);
-border: 1px solid rgba(153, 149, 149, 1);
-}
+        .ui-input-container {
+      position: relative;
+      width: 700px; /* Set the width to exactly 850px */
+    }
 
-/* Icon styling */
-.search_icon {
-  height: 1em;
-  padding: 0 0.5em 0 0.8em;
-  fill: #abb2bf;
-}
+    .ui-input {
+      width: 100%; /* Input will span the full width of the container */
+      padding: 10px 10px 10px 35px; /* Space for the icon */
+      font-size: 1em;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      background-color: transparent;
+      transition: border-color 0.5s;
+      box-sizing: border-box; /* Includes padding in total width */
+    }
 
-/* Input box styling */
-.inputBox {
-  background-color: transparent;
-  color: black;
-  outline: none;
-  width: 100%;
-  border: 0;
-  padding: 0.5em 1.5em 0.5em 0;
-  font-size: 1em;
-}
+    .ui-input:focus {
+      border-color: #6c63ff; /* Change border color on focus */
+    }
 
-::placeholder {
-  color: black;
-  text-weight: bold;
-  text-align: center;
-  font-size:20px;
-  font-family:impact;
-  padding-top:15px;
-}
+    .ui-input-underline {
+      position: absolute;
+      bottom: -2px; /* Align with the input bottom */
+      left: 0;
+      right: 0; /* Ensure it spans the full width */
+      height: 3px;
+      background-color: #6c63ff;
+      transform: scaleX(0); /* Start hidden */
+      transform-origin: left; /* Animate from left to right */
+      transition: transform 0.3s;
+    }
 
-/* Media Queries */
+    .ui-input:focus + .ui-input-underline {
+      transform: scaleX(1); /* Full width on focus */
+    }
 
-/* Mobile Devices */
-@media (max-width: 480px) {
-  .inputBox_container {
-    width: 100%;
-    flex-direction: column;
-  }
+    .ui-input-highlight {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background-color: rgba(108, 99, 255, 0.1);
+      transition: width 0.3s;
+    }
 
-  .search_icon {
-    padding: 0.5em;
-    height: 1.2em;
-  }
+    .ui-input:focus ~ .ui-input-highlight {
+      width: 100%; /* Highlight covers full width */
+    }
 
-  .inputBox {
-    padding: 0.5em 1.5em;
-    font-size: 0.9em;
-    background-color:b
-  }
-}
+    .ui-input-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      transition: color 0.3s;
+    }
 
-/* Tablets */
-@media (max-width: 768px) {
-  .inputBox_container {
-    width: 90%;
-  }
+    .ui-input:focus ~ .ui-input-icon {
+      color: #6c63ff; /* Change icon color on focus */
+    }
 
-  .search_icon {
-    padding: 0.5em;
-    height: 1.1em;
-  }
-
-  .inputBox {
-    padding: 0.5em 1.5em;
-    font-size: 1em;
-  }
-}
-
-/* Large Screens */
-@media (min-width: 1024px) {
-  .inputBox_container {
-    width: 800px;
-  }
-
-  .search_icon {
-    height: 1em;
-  }
-
-  .inputBox {
-    font-size: 1em;
-  }
-}
-
-
+    .ui-input-icon svg {
+      width: 20px;
+      height: 20px;
+    }
 `;
 
 const template = document.createElement('template');
 template.innerHTML = `
-<div class="inputBox_container">
-  <svg class="search_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" alt="search icon">
-    <path d="M46.599 46.599a4.498 4.498 0 0 1-6.363 0l-7.941-7.941C29.028 40.749 25.167 42 21 42 9.402 42 0 32.598 0 21S9.402 0 21 0s21 9.402 21 21c0 4.167-1.251 8.028-3.342 11.295l7.941 7.941a4.498 4.498 0 0 1 0 6.363zM21 6C12.717 6 6 12.714 6 21s6.717 15 15 15c8.286 0 15-6.714 15-15S29.286 6 21 6z">
-    </path>
-  </svg>
-  <input class="inputBox" id="inputBox" type="text" placeholder="Search For Products">
-</div>
+<div class="ui-input-container">
+    <input type="text" class="ui-input" placeholder="Type something..." required>
+    <div class="ui-input-underline"></div>
+    <div class="ui-input-highlight"></div>
+    <div class="ui-input-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2"
+          stroke="currentColor"
+          d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+        ></path>
+      </svg>
+    </div>
+  </div>
 `;
 
 class Searchbar extends HTMLElement {

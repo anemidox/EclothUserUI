@@ -16,9 +16,7 @@ style.textContent = `
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    height: 30px;
-  
-   
+    height: 20px;
 }
 
 `;

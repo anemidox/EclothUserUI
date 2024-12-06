@@ -1,26 +1,203 @@
 // Create and configure style
 const style = document.createElement('style');
 style.textContent = `
-    footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        bottom: 0;
-        width: 100%;
-    }
+  /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #fff;
+}
 
-    footer p {
-        margin: 0;
-    }
+.footer {
+  background-color: #222;
+  padding: 50px;
+  color: #ccc;
+  margin-top: 50px;
+
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-info li span {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.newsletter button {
+  background-color: orange;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #e67e22;
+}
+
+.tweets {
+  list-style: none;
+  padding: 0;
+}
+
+.tweets li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.instagram-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.instagram-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: orange;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #666;
+}
+
 `;
 
 // Create and configure template
 const template = document.createElement('template');
 template.innerHTML = `
-    <footer>
-        <p>Footer</p>
-    </footer>
+    <footer class="footer">
+    <div class="footer-container">
+      <!-- About Us Section -->
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, aspernatur ratione mollitia tempora eligendi maxime.</p>
+        <ul class="contact-info">
+          <li><span>📞</span> +1 291 3912 329</li>
+          <li><span>✉️</span> info@gmail.com</li>
+        </ul>
+        <form class="newsletter">
+          <input type="email" placeholder="Enter your e-mail" required>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <!-- Latest Tweets Section -->
+      <div class="footer-column">
+        <h3>Latest Tweet</h3>
+        <ul class="tweets">
+          <li>🕊️ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde omnis veniam porro excepturi.</li>
+          <li>🕊️ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde omnis veniam porro excepturi.</li>
+          <li>🕊️ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde omnis veniam porro excepturi.</li>
+        </ul>
+      </div>
+      <!-- Instagram Section -->
+      <div class="footer-column">
+        <h3>Instagram</h3>
+        <div class="instagram-gallery">
+          <img src="image1.jpg" alt="Instagram 1">
+          <img src="image2.jpg" alt="Instagram 2">
+          <img src="image3.jpg" alt="Instagram 3">
+          <img src="image4.jpg" alt="Instagram 4">
+        </div>
+      </div>
+    </div>
+    <!-- Footer Links -->
+    <div class="footer-bottom">
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Our Works</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+      <p>© 2024 Colorlib. All rights reserved.</p>
+    </div>
+  </footer>
 `;
 
 // Define the Footer custom element
@@ -34,6 +211,17 @@ class Footer extends HTMLElement {
     
     connectedCallback() {
         // Any additional setup if needed
+        document.querySelector(".newsletter").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = this.querySelector("input").value;
+            if (!email || !email.includes("@")) {
+              alert("Please enter a valid email address.");
+              return;
+            }
+            alert("Thank you for subscribing!");
+            this.reset();
+          });
+          
     }
 }
 

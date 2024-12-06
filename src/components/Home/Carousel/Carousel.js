@@ -9,12 +9,12 @@ template.innerHTML = `
         Your browser does not support the video tag.
     </video>
 <div class="overlay-content">
-    <h1 class="text">Wear the Trend, Own the Moment</h1>
     <p class="button">Elevate Your Style with Effortless Elegance.</p>
     <button class="button" data-text="Awesome">
         <span class="actual-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
         <span aria-hidden="true" class="hover-text">&nbsp;SHOP&nbspNOW&nbsp;</span>
     </button>
+</div>
 </div>
 </div>
 
@@ -46,10 +46,10 @@ style.textContent = `
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better separation */
     /* From https://css.glass */
     background: rgba(182, 194, 132, 0.03);
-    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.4px);
     -webkit-backdrop-filter: blur(4.4px);
+    margin-top: 0.5px;
 }
 
 .overlay-content {
@@ -75,7 +75,6 @@ style.textContent = `
     font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.8);
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -84,8 +83,6 @@ style.textContent = `
     background-color: rgba(255, 255, 255, 1);
 }  
 
-/* From Uiverse.io by satyamchaudharydev */ 
-/* === removing default button style ===*/
 .button {
   margin: 0;
   height: auto;

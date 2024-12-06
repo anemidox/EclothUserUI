@@ -1,7 +1,11 @@
 import { navigateTo } from '../../router/router.js'; 
+import { OurProudoutNavBar } from '../Product/OurProudoutNavBar.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
+
+<div class="wrapper">
+    <app-proudect-nav></app-proudect-nav>
     <div class="category">
         ${[...Array(16).keys()].map(i => `
             <article class="card" id="card-${i + 1}">
@@ -14,6 +18,7 @@ template.innerHTML = `
             </article>
         `).join('')}
     </div>
+</div>
 `;
 
 const style = document.createElement('style');
@@ -22,20 +27,28 @@ style.textContent = `
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
+   
         }
 
-        .category {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1em; 
-            padding: 1em; 
-            background: rgba(62, 152, 163, 0.25);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(7.7px);
-            -webkit-backdrop-filter: blur(7.7px);
-            border: 1px solid rgba(62, 152, 163, 0.32);
+            .wrapper{
+              position:relative; /* Ensure child elements respect stacking context */
+              width: 100%;
+              margin: 0 auto;
+            }
+
+
+        .category{
+                margin-top: 100px; /* Add space to prevent overlap with navbar */
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1em; 
+                padding: 1em; 
+                background: rgba(62, 152, 163, 0.25);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(7.7px);
+                -webkit-backdrop-filter: blur(7.7px);
+                border: 1px solid rgba(62, 152, 163, 0.32);
         }
 
         .card {
@@ -47,6 +60,9 @@ style.textContent = `
             overflow: hidden;
             border-radius:10px;
             transition: border 0.4s ease, transform 0.3s ease;
+            margin-top:80px;
+            margin-bottom:0px;
+  
         }
 
         .card:hover {

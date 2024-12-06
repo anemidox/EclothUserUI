@@ -1,16 +1,23 @@
 import CategoryBox from "../components/Home/Category.js";
 import Carousel from "../components/Home/Carousel/Carousel.js";
+import {OfferBar} from "../components/OfferBar.js";
+import{DesignerCloths} from "../components/DesignerCloths.js";
+import { FeedBack } from "../components/FeedBack.js";
+
 
 const template = document.createElement('template');
 template.innerHTML = `
     <div class="main">
         <carousel-box></carousel-box>
     </div>
-
     <div class="categories-section">
         <h2>Explore Our Categories</h2>
+        <app-offerbar></app-offerbar>
         <category-box></category-box>
-    </div>
+    </div>    
+    
+    <app-desigercloths></app-desigercloths>
+    <app-feedback></app-feedback>
 `;
 
 const style = document.createElement('style');
@@ -19,6 +26,7 @@ style.textContent = `
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        overflow: hidden;
     }
 
     .categories-section {

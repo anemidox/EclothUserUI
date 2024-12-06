@@ -1,11 +1,12 @@
 import { navigateTo } from "../../../router/router.js";
 
-const iconPath = 'src/assets/images/logo.png';
+const iconPath = 'src/assets/images/logos.png';
 
 const style = document.createElement('style');
 style.textContent = `
     img {
-        width: 60px;
+        width: 130px;
+        margin-top: 30px;
         height: auto;
         cursor: pointer;
     }

@@ -1,7 +1,8 @@
 const style = document.createElement('style');
 style.textContent = `
-        .ui-input-container {
+    .ui-input-container {
       position: relative;
+      left:-2px;
       width: 700px; /* Set the width to exactly 850px */
     }
 
@@ -18,7 +19,7 @@ style.textContent = `
     }
 
     .ui-input:focus {
-      border-color: #6c63ff; /* Change border color on focus */
+      border-color:#1a4b2e; /* Change border color on focus */
     }
 
     .ui-input-underline {
@@ -27,7 +28,7 @@ style.textContent = `
       left: 0;
       right: 0; /* Ensure it spans the full width */
       height: 3px;
-      background-color: #6c63ff;
+      background-color:#1a4b2e;
       transform: scaleX(0); /* Start hidden */
       transform-origin: left; /* Animate from left to right */
       transition: transform 0.3s;
@@ -35,16 +36,6 @@ style.textContent = `
 
     .ui-input:focus + .ui-input-underline {
       transform: scaleX(1); /* Full width on focus */
-    }
-
-    .ui-input-highlight {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 0;
-      background-color: rgba(108, 99, 255, 0.1);
-      transition: width 0.3s;
     }
 
     .ui-input:focus ~ .ui-input-highlight {
@@ -61,7 +52,7 @@ style.textContent = `
     }
 
     .ui-input:focus ~ .ui-input-icon {
-      color: #6c63ff; /* Change icon color on focus */
+      color:#1a4b2e; /* Change icon color on focus */
     }
 
     .ui-input-icon svg {

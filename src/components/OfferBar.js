@@ -1,13 +1,13 @@
-const iconPath = 'src/assets/images/stylish-woman-summer-outfit-isolated-posing-fashion-trend-isolated.jpg';
+const iconPath = 'src/assets/images/image.png';
 
 const style = document.createElement('style');
 style.textContent = `
 /* Offer container styling */
-.offer-container {
+.offer-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e7f7f3;
+  background-color:#d4f4e1;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -15,6 +15,8 @@ style.textContent = `
   transform: translateX(-100%);
   opacity: 0;
   transition: transform 1s ease-out, opacity 1s ease-out;
+  margin-top:60px;
+  margin-bottom:0px;
 }
 
 /* Offer container visible state */
@@ -35,13 +37,20 @@ style.textContent = `
 .image-section {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  top:-65px;
+  left:-150px;
+  
 }
 
 .offer-image {
   width: 100%;
-  border-radius: 10px;
+  height:auto;
+  width:350px; /* Set your desired image width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute; /* Positioning relative to the container */
+  top:-58px;
+  left:85px;
 }
 
 /* Text section */
@@ -51,7 +60,7 @@ style.textContent = `
 }
 
 .text-section h2 {
-  font-size: 2rem;
+  font-size:70px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -66,6 +75,8 @@ style.textContent = `
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
+  justify-content: center;
+  
 }
 
 .time-box {

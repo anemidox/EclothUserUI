@@ -3,6 +3,7 @@ import { urlLocationHandler } from './src/router/router.js';
 import { FooterApp } from './src/common/Footer.js';
 
 
+
 const app = () => {
     document.body.innerHTML = `
         ${AppHeader()}

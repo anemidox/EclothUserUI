@@ -161,8 +161,8 @@ class Carousel extends HTMLElement {
     connectedCallback() {
         const videoPlayer = this.shadowRoot.querySelector('#video-player'); // Access the element in the shadow DOM
         const videos = [
-            "/src/assets/video/6008256_4k_Attractive_3840x2160.mp4",
-            "/src/assets/video/4911645_Woman_Traveler_3840x2160.mp4",
+            "/src/assets/video/5889065-uhd_3840_2160_25fps.mp4",
+            "/src/assets/video/5889074-uhd_3840_2160_25fps.mp4",
             "/src/assets/video/3015510-hd_1920_1080_24fps.mp4",
         ];
     

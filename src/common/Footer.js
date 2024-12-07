@@ -1,4 +1,5 @@
 // Create and configure style
+const iconPath = 'src/assets/images/stylish-woman-summer-outfit-isolated-posing-fashion-trend-isolated.jpg';
 const style = document.createElement('style');
 style.textContent = `
   /* styles.css */
@@ -99,11 +100,11 @@ body {
 .instagram-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 5px;
 }
 
 .instagram-gallery img {
-  width: 100%;
+  width: 70%;
   height: auto;
   border-radius: 5px;
   transition: transform 0.3s ease;
@@ -178,10 +179,10 @@ template.innerHTML = `
       <div class="footer-column">
         <h3>Instagram</h3>
         <div class="instagram-gallery">
-          <img src="image1.jpg" alt="Instagram 1">
-          <img src="image2.jpg" alt="Instagram 2">
-          <img src="image3.jpg" alt="Instagram 3">
-          <img src="image4.jpg" alt="Instagram 4">
+          <img src="${iconPath}" alt="Instagram 1">
+          <img src="${iconPath}" alt="Instagram 2">
+          <img src="${iconPath}" alt="Instagram 3">
+          <img src="${iconPath}" alt="Instagram 4">
         </div>
       </div>
     </div>

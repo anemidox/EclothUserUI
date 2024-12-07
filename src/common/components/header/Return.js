@@ -4,7 +4,7 @@ const style = document.createElement('style');
 style.textContent = `
 /* From Uiverse.io by Cornerstone-04 */ 
 .box {
-  width: 60px;
+  width: 80px;
   height: auto;
   float: left;
   transition: .5s linear;
@@ -17,6 +17,7 @@ style.textContent = `
   background: transparent;
   text-transform: uppercase;
   font-weight: 900;
+  margin: 2px 10px 8px 10px;
 }
 
 .box:before {
@@ -50,21 +51,21 @@ style.textContent = `
 }
 
 .box:hover:before {
-  border-color: #262626;
+  border-color:#1a4b2e;
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .3s;
 }
 
 .box:hover:after {
-  border-color: #262626;
+  border-color:#1a4b2e;
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
 }
 
 button {
-  color: black;
+  color:#1a4b2e;
   text-decoration: none;
   cursor: pointer;
   outline: none;

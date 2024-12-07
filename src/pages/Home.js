@@ -27,6 +27,7 @@ style.textContent = `
         padding: 0;
         box-sizing: border-box;
         overflow: hidden;
+        border-radius:0px;
     }
 
     .categories-section {
@@ -36,12 +37,13 @@ style.textContent = `
     }
 
     .categories-section h2 {
-        font-size: 2.5em;
+        font-size:90px;
         margin-bottom: 1em;
-        color: #333;
+        color:#1a4b2e;
         font-weight: bold;
         position: relative;
         display: inline-block;
+        margin-bottom:15px;
     }
 
     .categories-section h2::after {
@@ -57,7 +59,6 @@ style.textContent = `
     }
 
     .main, .categories-section {
-        border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 

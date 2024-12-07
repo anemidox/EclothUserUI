@@ -17,6 +17,8 @@ style.textContent = `
     justify-content:space-evenly;
     align-items: center;
     height: 20px;
+    background-color:transparent;
+    margin-top:8px;
 }
 
 `;
@@ -29,8 +31,8 @@ template.innerHTML = `
         <app-header-name></app-header-name>
         <app-searchbar></app-searchbar>
         <app-return></app-return>
-        <app-login></app-login>
         <app-cart></app-cart>
+        <app-login></app-login> 
     </header>
 `;
 

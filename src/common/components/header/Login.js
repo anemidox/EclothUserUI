@@ -3,7 +3,7 @@ const iconPath = ('src/assets/icons/login.png');
 const style = document.createElement('style');
 style.textContent = `
 .box {
-  width:60px;
+  width:80px;
   height: auto;
   float: left;
   transition: .5s linear;
@@ -16,6 +16,7 @@ style.textContent = `
   text-transform: uppercase;
   font-weight: 900;
   margin-top: 5px;
+  margin: 2px 10px 8px 10px;
 }
 
 .box:before {
@@ -50,21 +51,21 @@ style.textContent = `
 }
 
 .box:hover:before {
-  border-color: #262626;
+  border-color:#1a4b2e;
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .3s;
 }
 
 .box:hover:after {
-  border-color: #262626;
+  border-color:#1a4b2e;
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
 }
 
 button {
-  color: black;
+  color:#1a4b2e;
   text-decoration: none;
   cursor: pointer;
   outline: none;

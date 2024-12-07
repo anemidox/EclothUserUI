@@ -7,10 +7,15 @@ style.textContent = `
     display: inline-block;
     transition: transform 0.2s;
     font-family: impact;
-    color:black;
+    color:#1a4b2e;
+    margin:0;
+    padding:0;
     }
 
-
+.keyboard { 
+    position: relative;
+    left:-50px;
+}
 
     @keyframes pressDown1 {
     30%,
@@ -137,7 +142,7 @@ style.textContent = `
 
 const template = document.createElement('template');
 template.innerHTML = `
-        <div class="keyboard">
+        <div class="keyboard">        
         <span class="key">E</span>
         <span class="key">-</span>
         <span class="key">C</span>

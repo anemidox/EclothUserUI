@@ -3,7 +3,7 @@ import { OurProudoutNavBar } from '../Product/OurProudoutNavBar.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-
+<h1>Our Proudout</h1>
 <div class="wrapper">
     <app-proudect-nav></app-proudect-nav>
     <div class="category">
@@ -38,31 +38,30 @@ style.textContent = `
 
 
         .category{
-                margin-top: 100px; /* Add space to prevent overlap with navbar */
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 1em; 
-                padding: 1em; 
-                background: rgba(62, 152, 163, 0.25);
+                gap:1px; 
+                padding: 70px;
+                background:#d4f4e1;
                 border-radius: 16px;
-                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(7.7px);
                 -webkit-backdrop-filter: blur(7.7px);
                 border: 1px solid rgba(62, 152, 163, 0.32);
+                margin-left: 50px;
+                margin-right: 50px;
         }
 
         .card {
             position: relative;
-            width: 350px;
-            height: 500px;
+            width: 300px;
+            height:430px;
             color: #2e2d31;
             background: black;
             overflow: hidden;
             border-radius:10px;
             transition: border 0.4s ease, transform 0.3s ease;
-            margin-top:80px;
-            margin-bottom:0px;
-  
+            margin-top:30px;
         }
 
         .card:hover {
@@ -98,7 +97,7 @@ style.textContent = `
             left: 0;
             bottom: 0;
             width: 100%;
-            padding: 20px;
+            padding:20px;
             background: #f2f2f2;
             border-top-left-radius: 20px;
             transform: translateY(150px);
@@ -116,6 +115,15 @@ style.textContent = `
             border-radius: 50%;
             box-shadow: inset 48px 48px #f2f2f2;
         }
+        
+        h1{
+            font-size:90px;
+            color:#1a4b2e;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            margin-bottom:20px;
+            }
 
         .card_title {
             font-weight: bold;
@@ -155,6 +163,22 @@ style.textContent = `
                 grid-template-columns: 1fr; 
             }
         }
+
+        /* New CSS for scroll-triggered animation */
+        .card {
+            opacity: 0;
+            transform: translateX(-100px); /* Start off-screen (left side) */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .card:nth-child(even) {
+            transform: translateX(100px); /* Start off-screen (right side) */
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateX(0); /* Reset to the original position */
+        }
 `;
 
 class CategoryBox extends HTMLElement {
@@ -166,6 +190,7 @@ class CategoryBox extends HTMLElement {
 
     connectedCallback() {
         this.fetchData();
+        this.addScrollAnimation();
     }
 
     async fetchData() {
@@ -211,6 +236,25 @@ class CategoryBox extends HTMLElement {
         } else {
             console.error(`Card not found: ${selector}`);
         }
+    }
+
+    addScrollAnimation() {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const card = entry.target;
+                    if (entry.isIntersecting) {
+                        card.classList.add('visible');
+                    } else {
+                        card.classList.remove('visible');
+                    }
+                });
+            },
+            { threshold: 0.2 } // Trigger when 20% of the element is visible
+        );
+
+        const cards = this.shadowRoot.querySelectorAll('.card');
+        cards.forEach((card) => observer.observe(card));
     }
 }
 

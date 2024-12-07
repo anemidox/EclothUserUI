@@ -1,3 +1,5 @@
+const iconPath = "src/assets/images/stylish-woman-summer-outfit-isolated-posing-fashion-trend-isolated.jpg"
+
 const style = document.createElement('style');
 style.textContent = `
 /* styles.css */
@@ -86,6 +88,13 @@ body {
   background: #469960;
 }
 
+.quote{
+  object-fit:cover;
+  width:50px;
+
+
+}
+
 
 `;
 
@@ -95,7 +104,7 @@ template.innerHTML = `
     <h2>Feedback Corner</h2>
     <div class="feedback-container">
       <div class="feedback-card">
-        <p class="quote">“</p>
+        <p class="quote"></p>
         <h3>Emily Wilson</h3>
         <p>The customer experience was exceptional from start to finish. The website is user-friendly, the checkout process was smooth, and the clothes I ordered fit perfectly. I'm beyond satisfied!</p>
       </div>

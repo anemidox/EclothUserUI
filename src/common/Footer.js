@@ -7,12 +7,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #111;
+  background-color:#1a4b2e;
   color: #fff;
 }
 
 .footer {
-  background-color: #222;
+  background-color:#1a4b2e;
   padding: 50px;
   color: #ccc;
   margin-top: 50px;
@@ -181,8 +181,6 @@ template.innerHTML = `
         <div class="instagram-gallery">
           <img src="${iconPath}" alt="Instagram 1">
           <img src="${iconPath}" alt="Instagram 2">
-          <img src="${iconPath}" alt="Instagram 3">
-          <img src="${iconPath}" alt="Instagram 4">
         </div>
       </div>
     </div>

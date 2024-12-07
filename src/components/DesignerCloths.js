@@ -2,82 +2,112 @@ const iconPath = 'src/assets/images/stylish-woman-summer-outfit-isolated-posing-
 
 const style = document.createElement('style');
 style.textContent = `
-/* General styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-  color: #333;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Section styles */
 .designer-clothes {
   padding: 40px;
-}
-
-.section-title {
-  font-size: 2.5em;
-  color: #1a2b12;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-size: 1.1em;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-/* Cards container */
-.cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Card styles */
-.card {
-  background-color: #fff;
-  width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top:0px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
   overflow: hidden;
-  transform: perspective(1000px) rotateY(0deg);
-  transition: transform 0.6s, box-shadow 0.4s;
+  border-radius: 16px;
+  background-color:transparent;
+  height:800px;
 }
 
-.card:hover {
-  transform: perspective(1000px) rotateY(15deg);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.cards {
+  display: flex;
+  flex-direction:row;
+  gap: 15px;
+  justify-content: center;
 }
 
-.card-image {
-  width: 100%;
-  object-fit:cover;
+.cards .one {
+  background-color:#d4f4e1;
 }
 
-.card-title {
-  font-size: 1.5em;
-  color: #1a2b12;
-  margin: 20px 0 10px;
+.cards .two {
+  background-color:#d4f4e1;
+  color: black;
 }
 
-.card-description {
-  font-size: 1em;
-  color: #666;
-  padding: 0 20px 20px;
-  line-height: 1.5;
+.cards .three {
+  background-color:#d4f4e1;
 }
 
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column;
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 500px;
+  width: 350px;
+  border-radius: 10px;
+  color: rgb(1, 1, 1);
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+ .section-title{
+    font-size:60px;
+    color:#1a4b2e;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom:20px;
     align-items: center;
+    position: relative;
+    left:300px;
+    margin-top:60px;
   }
+ 
+  .section-subtitle{
+    color:#1a4b2e;
+    font-size: 30px;
+    text-align: center;
+    margin-top:0;
+  
+  }
+
+  .card .card-image {
+  width:200px;
+  height:70%;
+  border-radius: 8px;
+  margin-top:35px;
 }
 
+.card .card-tagline {
+  font-size: 1.5rem;
+  margin: 15px 0 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card .card-description {
+  font-size: 1rem;
+  margin: 10px 20px;
+  color: #555;
+}
+
+.card .card-button {
+  background-color:#1a4b2e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+}
 
 `;
 
@@ -88,36 +118,28 @@ template.innerHTML = `
     <p class="section-subtitle">
       Immerse yourself in the world of luxury fashion with our meticulously crafted designer clothes!
     </p>
-    <div class="cards-container">
-      <div class="card">
-        <img src="${iconPath}" alt="Accessories" class="card-image">
-        <h3 class="card-title">Accessories</h3>
-        <p class="card-description">
-          Complete your ensemble with designer accessories such as handbags, scarves, belts, and hats.
-        </p>
+
+  <div class="cards">
+      <div class="card one">
+          <img src="${iconPath}" alt="Product Image" class="card-image">
+          <h2 class="card-tagline">Amazing Product</h2>
+          <p class="card-description">This is a brief description of the amazing product that highlights its features.</p>
+          <button class="card-button">Read More...</button>
       </div>
-      <div class="card">
-        <img src="${iconPath}" alt="Dresses" class="card-image">
-        <h3 class="card-title">Dresses</h3>
-        <p class="card-description">
-          Explore a stunning range of designer dresses, including evening gowns and chic day dresses.
-        </p>
+      <div class="card two">
+         <img src="${iconPath}" alt="Product Image" class="card-image">
+          <h2 class="card-tagline">Amazing Product</h2>
+          <p class="card-description">This is a brief description of the amazing product that highlights its features.</p>
+          <button class="card-button">Read More...</button>
       </div>
-      <div class="card">
-        <img src="${iconPath}" alt="Outerwear" class="card-image">
-        <h3 class="card-title">Outerwear</h3>
-        <p class="card-description">
-          Browse luxurious designer coats, jackets, and blazers to stay stylishly warm during colder seasons.
-        </p>
+      <div class="card three">
+          <img src="${iconPath}" alt="Product Image" class="card-image">
+          <h2 class="card-tagline">Amazing Product</h2>
+          <p class="card-description">This is a brief description of the amazing product that highlights its features.</p>
+          <button class="card-button">Read More...</button>
       </div>
-      <div class="card">
-        <img src="${iconPath}" alt="Outerwear" class="card-image">
-        <h3 class="card-title">Outerwear</h3>
-        <p class="card-description">
-          Browse luxurious designer coats, jackets, and blazers to stay stylishly warm during colder seasons.
-        </p>
-      </div>
-    </div>
+  </div>
+
   </section>
 `;
 

@@ -1,6 +1,6 @@
 import { routes, matchRoute, normalizePath } from './routes.js';
 
-// Handle route changes
+// Handle route changes.
 export const urlLocationHandler = async () => {
     let path = window.location.pathname || "/";
     path = normalizePath(path);
